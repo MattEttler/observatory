@@ -18,6 +18,9 @@ steps:
     dir
   displayName: 'npm install and build'
 
+- script: |
+    npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+
 - task: PublishPipelineArtifact@0
   inputs:
     artifactName: 'o97'

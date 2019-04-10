@@ -52,4 +52,11 @@ describe('ObservationComponent', () => {
 
     expect(observationService.uploadObservationImage).toHaveBeenCalledTimes(2);
   });
+
+  it('should trigger choose file dialog when button is clicked', () => {
+    let fileInputElement: HTMLInputElement = compiled.querySelector('input[type=file]');
+    spyOn(fileInputElement, 'click');
+    compiled.querySelector('button').click();
+    expect(fileInputElement.click).toHaveBeenCalled();
+  });
 });
