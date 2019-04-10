@@ -8,6 +8,7 @@ import { of } from 'rxjs';
 describe('ObservationComponent', () => {
   let component: ObservationComponent;
   let fixture: ComponentFixture<ObservationComponent>;
+  let compiled: HTMLElement;
   let observationService: ObservationService;
 
   beforeEach(async(() => {
@@ -22,6 +23,7 @@ describe('ObservationComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ObservationComponent);
     component = fixture.componentInstance;
+    compiled = fixture.debugElement.nativeElement;
     observationService = TestBed.get(ObservationService);
     fixture.detectChanges();
   });
@@ -30,7 +32,11 @@ describe('ObservationComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should upload all files via the ObservationService', () => {
+  it('should render', () => {
+    expect(compiled.querySelector('button').textContent).toContain('+');
+  });
+
+  it('should upload a list of image files', () => {
     const blob = new Blob([''], { type: 'text/html' });
     blob['name'] = 'filename';
     const file = blob as File;
