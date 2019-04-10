@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ObservationModule } from './modules/observation/observation.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { ObservationModule } from './modules/observation/observation.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     // FEATURE MODULES
     ObservationModule
   ],
