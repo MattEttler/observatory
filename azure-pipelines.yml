@@ -19,7 +19,7 @@ steps:
   displayName: 'npm install and build'
 
 - script: |
-    npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI
+    npm run test -- --no-watch --no-progress --browsers=ChromeHeadless
   displayName: 'npm test'
 
 - task: PublishPipelineArtifact@0
