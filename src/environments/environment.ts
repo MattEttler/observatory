@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  observatoryApiEndpoint: `http://api.o9y.soma.farm`
+  observatoryApiEndpoint: `https://api.o9y.soma.farm`
 };
 
 /*
