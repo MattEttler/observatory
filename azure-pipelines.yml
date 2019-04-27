@@ -23,5 +23,5 @@ steps:
 
 - task: PublishPipelineArtifact@0
   inputs:
-    artifactName: 'o97'
+    artifactName: 'o9y'
     targetPath: 'dist'
