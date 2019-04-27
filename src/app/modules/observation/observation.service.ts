@@ -15,7 +15,7 @@ export class ObservationService {
     ) { }
 
     public uploadObservationImage(file: File): Observable<boolean> {
-        return this.getSecureS3UploadLink()
+        return this.getSecureS3UploadLink(file.type)
             .pipe(
                 switchMap(observationUploadModel => {
                     file = new File([file], observationUploadModel.fileName, { type: file.type });
@@ -25,8 +25,8 @@ export class ObservationService {
             );
     }
 
-    private getSecureS3UploadLink(): Observable<ObservationUploadModel> {
-        const endpoint = `${environment.observatoryApiEndpoint}/observation`;
+    private getSecureS3UploadLink(fileType: string): Observable<ObservationUploadModel> {
+        const endpoint = `${environment.observatoryApiEndpoint}/observation?fileType=${fileType}`;
         return this._httpClient
             .get<ObservationUploadModel>(endpoint);
     }
