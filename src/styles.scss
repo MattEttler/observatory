@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #6ed2aa;
+
+  button {
+    border-color: #509b7d;
+    background-color: aquamarine;
+    border-style: solid;
+    border-radius: 50%;
+    font-size: 21pt;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #509b7d;
+    }
+  }
+}
