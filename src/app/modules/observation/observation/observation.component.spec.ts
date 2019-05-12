@@ -4,6 +4,7 @@ import { ObservationComponent } from './observation.component';
 import { ObservationService } from '../observation.service';
 import { HttpClientModule } from '@angular/common/http';
 import { of } from 'rxjs';
+import { StudyComponent } from '../study/study.component';
 
 describe('ObservationComponent', () => {
   let component: ObservationComponent;
@@ -14,7 +15,7 @@ describe('ObservationComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientModule],
-      declarations: [ObservationComponent],
+      declarations: [ObservationComponent, StudyComponent],
       providers: [ObservationService]
     })
       .compileComponents();
@@ -54,7 +55,7 @@ describe('ObservationComponent', () => {
   });
 
   it('should trigger choose file dialog when button is clicked', () => {
-    let fileInputElement: HTMLInputElement = compiled.querySelector('input[type=file]');
+    const fileInputElement: HTMLInputElement = compiled.querySelector('input[type=file]');
     spyOn(fileInputElement, 'click');
     compiled.querySelector('button').click();
     expect(fileInputElement.click).toHaveBeenCalled();
