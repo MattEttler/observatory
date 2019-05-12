@@ -4,6 +4,7 @@ import { map, switchMap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ObservationUploadModel } from './models/observation-upload.model';
+import { Observation } from './models/observation.model';
 
 @Injectable({
     providedIn: 'root'
@@ -29,5 +30,11 @@ export class ObservationService {
         const endpoint = `${environment.observatoryApiEndpoint}/observation?fileType=${fileType}`;
         return this._httpClient
             .get<ObservationUploadModel>(endpoint);
+    }
+
+    public getLatestObservation(): Observable<Observation> {
+        const endpoint = `${environment.observatoryApiEndpoint}/observation/latest`;
+        return this._httpClient
+            .get<Observation>(endpoint);
     }
 }

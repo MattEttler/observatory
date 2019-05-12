@@ -1,17 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  background-color: #6ed2aa;
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700');
+@import 'color-pallet.scss';
 
-  button {
-    border-color: #509b7d;
-    background-color: aquamarine;
-    border-style: solid;
-    border-radius: 50%;
-    font-size: 21pt;
-    cursor: pointer;
+* {
+  font-family: 'Roboto', sans-serif;
+  color: $primary-text-color;
 
-    &:hover {
-      background-color: #509b7d;
+  body {
+    background-color: $background-color;
+
+    button {
+      transition-property: all;
+      transition-duration: .25s;
+      opacity: .75;
+      background-color: $primary-action-color;
+
+      border-style: none;
+      border-radius: 50%;
+      font-size: 21pt;
+      cursor: pointer;
+
+      &:hover {
+        opacity: 1;
+      }
     }
   }
+
 }
