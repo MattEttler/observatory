@@ -1,6 +1,6 @@
 import { assert, expect } from "chai";
 import { Given, Then, When } from "cucumber";
-import { browser } from "protractor";
+import { browser, protractor } from "protractor";
 import { ObservationDeckComponent } from "../components/observation-deck.component";
 
 const observationDeck: ObservationDeckComponent = new ObservationDeckComponent();
@@ -10,7 +10,7 @@ Given(/^there is at least one observation$/, async () => {
 });
 
 When(/^the observation component is initiated$/, async () => {
-    await expect(browser.getCurrentUrl()).to.eventually.equal("https://o9y.soma.farm/observation");
+    await expect(browser.getCurrentUrl()).to.eventually.equal(`${browser.baseUrl}/observation`);
 });
 
 Then(/^the latest observations details are shown$/, async () => {
