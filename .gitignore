@@ -13,7 +13,7 @@
 #e2e
 e2e/node_modules
 e2e/reports
-e2e/typescript
+e2e/tsc-out
 
 # profiling files
 chrome-profiler-events.json
