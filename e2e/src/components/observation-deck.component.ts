@@ -1,6 +1,6 @@
 import { $, ElementFinder } from "protractor";
-import { ObservationStudyComponent } from "./observation-study.component";
 import { IBaseComponent } from "./base.component";
+import { ObservationStudyComponent } from "./observation-study.component";
 
 export class ObservationDeckComponent implements IBaseComponent {
     public elementFinder: ElementFinder;

@@ -18,7 +18,7 @@ export class ObservationStudyComponent implements IBaseComponent {
         this.negativeReactionButton = $("#negative-reaction-btn");
     }
 
-    public async hasPositiveReactionFromUser(): Promise<boolean> {
-        return $(`${this.elementSelector}.positive-reaction`).isPresent();
+    public async hasReaction(reactionType: string): Promise<boolean> {
+        return $(`${this.elementSelector}.${reactionType.toLowerCase()}-reaction`).isPresent();
     }
 }
