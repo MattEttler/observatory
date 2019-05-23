@@ -1,6 +1,6 @@
 import * as path from "path";
 import { browser, Config } from "protractor";
-import { Reporter } from "../support/reporter";
+import { Reporter } from "./src/support/reporter";
 const jsonReports = process.cwd() + "/reports/json";
 
 export const config: Config = {
@@ -9,20 +9,20 @@ export const config: Config = {
 
     SELENIUM_PROMISE_MANAGER: false,
 
-    baseUrl: "https://o9y.soma.farm",
+    baseUrl: "http://localhost:4200",
 
     capabilities: {
         browserName: "chrome",
         chromeOptions: {
-            args: ["--headless", "--disable-gpu", "--window-size=800,600"]
-        }
+            args: ["--headless", "--disable-gpu", "--window-size=800,600"],
+        },
     },
 
     framework: "custom",
     frameworkPath: require.resolve("protractor-cucumber-framework"),
 
     specs: [
-        "../../features/*.feature",
+        "../src/features/*.feature",
     ],
 
     onPrepare: () => {
@@ -34,7 +34,7 @@ export const config: Config = {
     cucumberOpts: {
         compiler: "ts:ts-node/register",
         format: "json:./reports/json/cucumber_report.json",
-        require: ["../../typeScript/stepdefinitions/*.js", "../../typeScript/support/*.js"],
+        require: ["../tsc-out/src/stepdefinitions/*.js", "../tsc-out/src/support/*.js"],
         strict: true,
         tags: "@CucumberScenario or @ProtractorScenario or @TypeScriptScenario or @OutlineScenario",
     },

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { ObservationService } from '../observation.service';
 import { Observation } from '../models/observation.model';
 
@@ -10,6 +10,8 @@ import { Observation } from '../models/observation.model';
 export class StudyComponent implements OnInit {
 
   public observation: Observation;
+  @HostBinding('class') reaction: string;
+
   constructor(private _observationService: ObservationService) { }
 
   ngOnInit() {
@@ -20,10 +22,18 @@ export class StudyComponent implements OnInit {
   updateStudy() {
     this._observationService.getLatestObservation().subscribe(observation => {
       this.observation = observation;
+      this.reaction = undefined;
     });
   }
 
   time(ms: any) {
     return new Date(Number(ms)).toISOString();
+  }
+
+  public react(reactionType: string) {
+    this.reaction = `${reactionType}-reaction`;
+    this._observationService.recordReaction(reactionType)
+      .subscribe(() => { },
+        () => this.reaction = undefined);
   }
 }

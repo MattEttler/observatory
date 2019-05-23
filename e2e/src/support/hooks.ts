@@ -3,7 +3,7 @@ import * as chai from "chai";
 import * as chaiAsPromised from "chai-as-promised";
 import * as fs from "fs";
 import { browser } from "protractor";
-import { config } from "../config/config";
+import { config } from "../../protractor.config";
 
 BeforeAll({ timeout: 100 * 1000 }, async () => {
     await browser.get(config.baseUrl);

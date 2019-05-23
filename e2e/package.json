@@ -23,10 +23,11 @@
     "build": "tsc",
     "clean": "rimraf typeScript/",
     "clean-build": "npm run clean && npm run build",
+    "clean-test": "npm run clean-build && npm run test",
     "init-contributors": "all-contributors init",
     "add-contributors": "all-contributors add",
     "generate-contributors": "all-contributors generate",
-    "test": "protractor typeScript/config/config.js",
+    "test": "protractor tsc-out/protractor.config.js",
     "webdriver-update": "webdriver-manager update",
     "webdriver-start": "webdriver-manager start"
   },

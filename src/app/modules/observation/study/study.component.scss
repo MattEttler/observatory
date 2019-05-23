@@ -1,5 +1,27 @@
 @import 'src/scss/color-pallet.scss';
 
+:host(.positive-reaction) {
+  #positive-reaction-btn {
+    opacity: 1;
+  }
+}
+
+:host(.negative-reaction) {
+  #negative-reaction-btn {
+    opacity: 1;
+  }
+}
+
+button {
+  opacity: .75;
+}
+
+.reaction-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .imageContainer {
   box-shadow: rgba(0, 0, 0, .2) 0px 0px 10px;
   background-color: $primary-action-color;

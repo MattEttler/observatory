@@ -34,7 +34,7 @@ describe('ObservationComponent', () => {
   });
 
   it('should render', () => {
-    expect(compiled.querySelector('button').textContent).toContain('+');
+    expect(compiled.querySelector('#file-input-btn').textContent).toContain('+');
   });
 
   it('should upload a list of image files', () => {
@@ -57,7 +57,7 @@ describe('ObservationComponent', () => {
   it('should trigger choose file dialog when button is clicked', () => {
     const fileInputElement: HTMLInputElement = compiled.querySelector('input[type=file]');
     spyOn(fileInputElement, 'click');
-    compiled.querySelector('button').click();
+    compiled.querySelector<HTMLButtonElement>('#file-input-btn').click();
     expect(fileInputElement.click).toHaveBeenCalled();
   });
 });

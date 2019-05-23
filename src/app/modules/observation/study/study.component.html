@@ -6,3 +6,19 @@
     </span>
   </div>
 </div>
+<div class="reaction-container">
+  <button id="positive-reaction-btn" class="icon-btn" (click)='react("positive")'>
+    <span *ngIf="reaction == 'positive-reaction'">
+      <i class="fas fa-heart"></i> </span>
+    <span *ngIf="reaction != 'positive-reaction'">
+      <i class="far fa-heart"></i> </span>
+  </button>
+  <button id="negative-reaction-btn" class="icon-btn" (click)='react("negative")'>
+    <span *ngIf="reaction == 'negative-reaction'">
+      <i class='fas fa-times-circle'></i>
+    </span>
+    <span *ngIf="reaction != 'negative-reaction'">
+      <i class='far fa-times-circle'></i>
+    </span>
+  </button>
+</div>
