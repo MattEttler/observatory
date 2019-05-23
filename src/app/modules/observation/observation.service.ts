@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ObservationUploadModel } from './models/observation-upload.model';
 import { Observation } from './models/observation.model';
+import { ApiResponseModel } from './models/api-response.model';
 
 @Injectable({
     providedIn: 'root'
@@ -36,5 +37,11 @@ export class ObservationService {
         const endpoint = `${environment.observatoryApiEndpoint}/observation/latest`;
         return this._httpClient
             .get<Observation>(endpoint);
+    }
+
+    public recordReaction(reactionType: string): Observable<ApiResponseModel> {
+        const endpoint = `${environment.observatoryApiEndpoint}/reaction`;
+        return this._httpClient
+            .post<ApiResponseModel>(endpoint, { reaction_type: reactionType });
     }
 }
