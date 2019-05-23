@@ -16,6 +16,12 @@ button {
   opacity: .75;
 }
 
+.reaction-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
 .imageContainer {
   box-shadow: rgba(0, 0, 0, .2) 0px 0px 10px;
   background-color: $primary-action-color;

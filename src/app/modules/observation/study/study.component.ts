@@ -31,7 +31,9 @@ export class StudyComponent implements OnInit {
   }
 
   public react(reactionType: string) {
+    this.reaction = `${reactionType}-reaction`;
     this._observationService.recordReaction(reactionType)
-      .subscribe(() => this.reaction = `${reactionType}-reaction`);
+      .subscribe(() => { },
+        () => this.reaction = undefined);
   }
 }
