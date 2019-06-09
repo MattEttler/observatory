@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FoliageChartComponent } from './foliage-chart.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { ButtonModule, ChartModule, DialogModule, InputTextModule, PanelModule, SharedModule, SidebarModule, TreeModule } from 'primeng/primeng';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('FoliageChartComponent', () => {
   let component: FoliageChartComponent;
@@ -8,9 +11,22 @@ describe('FoliageChartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FoliageChartComponent ]
+      declarations: [FoliageChartComponent],
+      imports: [
+        HttpClientModule,
+        BrowserModule,
+        // PrimeNG Modules
+        ButtonModule,
+        ChartModule,
+        DialogModule,
+        InputTextModule,
+        PanelModule,
+        SharedModule,
+        SidebarModule,
+        TreeModule
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

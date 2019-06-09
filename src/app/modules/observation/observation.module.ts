@@ -21,7 +21,7 @@ import {
     PanelModule,
     SharedModule,
     SidebarModule,
-    TreeModule,
+    TreeModule
   ],
   exports: [ObservationComponent]
 })
