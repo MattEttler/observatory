@@ -5,6 +5,9 @@ import { ObservationService } from '../observation.service';
 import { HttpClientModule } from '@angular/common/http';
 import { of } from 'rxjs';
 import { StudyComponent } from '../study/study.component';
+import { FoliageChartComponent } from '../foliage-chart/foliage-chart.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { ButtonModule, ChartModule, DialogModule, InputTextModule, PanelModule, SharedModule, SidebarModule, TreeModule } from 'primeng/primeng';
 
 describe('ObservationComponent', () => {
   let component: ObservationComponent;
@@ -14,8 +17,18 @@ describe('ObservationComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientModule],
-      declarations: [ObservationComponent, StudyComponent],
+      imports: [HttpClientModule,
+        BrowserModule,
+        // PrimeNG Modules
+        ButtonModule,
+        ChartModule,
+        DialogModule,
+        InputTextModule,
+        PanelModule,
+        SharedModule,
+        SidebarModule,
+        TreeModule],
+      declarations: [ObservationComponent, StudyComponent, FoliageChartComponent],
       providers: [ObservationService]
     })
       .compileComponents();

@@ -30,7 +30,9 @@
               "src/scss/styles.scss",
               "src/scss/color-pallet.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/chart.js/dist/Chart.js"
+            ],
             "es5BrowserSupport": true
           },
           "configurations": {
@@ -84,7 +86,9 @@
               "src/scss/styles.scss",
               "src/scss/color-pallet.scss"
             ],
-            "scripts": [],
+            "scripts": [
+              "./node_modules/chart.js/dist/Chart.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

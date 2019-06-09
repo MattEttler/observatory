@@ -6,6 +6,7 @@ import { environment } from 'src/environments/environment';
 import { ObservationUploadModel } from './models/observation-upload.model';
 import { Observation } from './models/observation.model';
 import { ApiResponseModel } from './models/api-response.model';
+import { FoliageTimeSeriesModel } from './models/foliage-time-series.model';
 
 @Injectable({
     providedIn: 'root'
@@ -43,5 +44,11 @@ export class ObservationService {
         const endpoint = `${environment.observatoryApiEndpoint}/reaction`;
         return this._httpClient
             .post<ApiResponseModel>(endpoint, { reaction_type: reactionType });
+    }
+
+    public getFoliageTimeSeries(): Observable<FoliageTimeSeriesModel[]> {
+        const endpoint = `${environment.observatoryApiEndpoint}/observation/foliage`;
+        return this._httpClient
+            .get<FoliageTimeSeriesModel[]>(endpoint);
     }
 }
