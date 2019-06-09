@@ -6,14 +6,22 @@ import { FoliageChartComponent } from './foliage-chart/foliage-chart.component';
 import { BrowserModule } from '@angular/platform-browser';
 
 import {
-  ChartModule
+  ChartModule, ButtonModule, DialogModule, InputTextModule, PanelModule, SharedModule, SidebarModule, TreeModule
 } from 'primeng/primeng';
 
 @NgModule({
   declarations: [ObservationComponent, StudyComponent, FoliageChartComponent],
   imports: [
     BrowserModule,
-    ChartModule
+    // PrimeNG Modules
+    ButtonModule,
+    ChartModule,
+    DialogModule,
+    InputTextModule,
+    PanelModule,
+    SharedModule,
+    SidebarModule,
+    TreeModule,
   ],
   exports: [ObservationComponent]
 })
